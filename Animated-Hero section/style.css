@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+.main{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background: #000000;
+    color: white;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;justify-content: space-between;
+    padding: 20px 30px;
+    background: #00000052;
+    backdrop-filter: blur(8px);
+    color: white;
+    z-index: 999;
+}
+
+nav .logo h2{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+nav .navlink{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding-right: 40px;
+}
+
+nav .navlink a{
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+    transition: 0.5s all ease;
+}
+nav .navlink a:after{
+    position: absolute;
+    top:50%;
+    left: -5%;
+    content: '';
+    width: 0;
+    height: 1px;
+    background: rgb(141,0,35);
+    transition: all .5s ease;
+}
+
+nav .navlink a:hover:after{
+    width: 110%;
+}
+
+nav .navlink a:hover{
+    color: rgb(44, 44, 44);
+}
+
+section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--bg);
+}
+
+.one{
+    color: white;
+}
+
+.one .headCon{
+    width: 750px;
+    height: 100px;
+    margin-left: 150px;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+}
+.one .headCon h1{
+    position: absolute;
+    top:0;
+    left:0;
+    font-size: 9vw;
+    line-height: 8vw;
+}
+
+.one .headCon:nth-child(2){
+    margin-left: 300px;
+}
+.one .headCon:nth-child(3){
+    margin-left: 450px;
+}
+
+.imagesCon{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-40%, -50%);
+    
+}
+.imagesCon .wrapper{
+    position: relative;
+
+}
+.imagesCon .imgDiv{
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    position: absolute;
+    top: -150px;
+    left: -50px;
+    rotate: calc( (2 - var(--i)) * 10deg);
+}
+/* .imagesCon .imgDiv::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    background: linear-gradient(to bottom, transparent, rgb(0, 0, 0));
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+} */
+.imagesCon .imgDiv img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.texts{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.textDiv1{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-left: 20px;
+}
+.textDiv1 li{
+    /* text-decoration: underline; */
+    width: fit-content;
+    list-style: none;
+    font-weight: lighter;
+    font-size: .9em;
+    cursor: pointer;
+    position: relative;
+    color: white;
+    transition: 0.5s all ease;
+}
+.textDiv1 li::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left:-5%;
+    width: 0;
+    height: 1px;
+    background: rgb(141,0,35);
+    transition: 0.5s all ease;
+}
+.textDiv1 li:hover:after{
+    width: 110%;
+}
+.textDiv1 li:hover{
+    color: rgb(44, 44, 44);
+}
+
+.textDiv2{
+    display: flex;
+    gap: 20px;
+    margin-right: 50px;
+}
+
+.textDiv2 a{
+    text-decoration: none;
+    font-size: .9em;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    border: 0.5px solid rgb(233, 231, 231);
+    /* border-radius: 10px; */
+    color: white;
+}

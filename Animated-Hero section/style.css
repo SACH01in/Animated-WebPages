@@ -8,8 +8,59 @@
 html,body{
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
     transition: 0.2s all ease;
 }
+
+.loader{
+    position: fixed;
+    z-index: 1000;
+    opacity: 1;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    background: #111111;
+    & .logo{
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 0;
+        height: 50px;
+        overflow: hidden;
+        border-bottom: 1px solid #ffffff28;
+        & h2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            font-weight: 500;
+            color: white;
+            & span{
+                display: inline-block;
+                position: relative;
+                font-size: 50px;
+                transform: translateY(100%);
+            }
+        }
+    }
+    & h1{
+        font-size: 2vw;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        font-weight: 400;
+        & span{
+            font-size: 5vw;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    }
+}
+.loader{
+    scroll-behavior:inherit;
+}
+
 
 .main{
     width: 100%;
@@ -30,7 +81,7 @@ nav{
     background: #00000000;
     backdrop-filter: blur(8px);
     color: white;
-    z-index: 999;
+    z-index: 99;
 }
 
 nav .logo h2{
@@ -75,17 +126,16 @@ nav .navlink a:hover{
 
 /* sections */
 section{
+    position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* background: var(--bg); */
 }
 
 /* section 1 */
 .one{
-    /* background: var(--bg); */
     color: white;
     overflow: hidden;
 }
@@ -113,6 +163,56 @@ section{
 .one .headCon:nth-child(3){
     margin-left: 450px;
 }
+
+
+/* about section */
+.about{
+    color:white;
+    flex-direction: row;
+    gap: 50px;
+    padding: 50px;
+    position: relative;
+    overflow: hidden;
+}
+.about .image{
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 60%;
+    height: 70%;
+    overflow: hidden;
+    border-radius: 20px;
+    background: red;
+    z-index: -1;
+    & img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+    }
+}
+.about ul{
+    position:absolute;
+    top: 50%;
+    left: 45%;
+    width: 33%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 40px 50px;
+    border-radius: 10px;
+    background: rgba(0, 217, 255, 0.096);
+    backdrop-filter: blur(8px);
+    border: 0.5px solid #ffffff28;
+    & li{
+        list-style: outside;
+        font-size: 1.05em;
+    }
+}
+
+/* .three */
 
 .imagesCon{
     position: absolute;
@@ -170,7 +270,6 @@ section{
     margin-left: 20px;
 }
 .textDiv1 li{
-    /* text-decoration: underline; */
     width: fit-content;
     list-style: none;
     font-weight: lighter;
@@ -221,152 +320,59 @@ body::-webkit-scrollbar{
     display: none;
 }
 
-/* section 2 */
 
-.two{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 600px;
-}
-.ssp{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: red;
-    z-index: -1;
-}
-
-.wrapper{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 50px;
-    gap: 70px;
-}
-
-.left{
-    width: 40%;
-    height: 500px;
-    overflow: hidden;
-}
-
-.left img{
-    width: 100%;
-    height:100%;
-    object-fit: cover;
-}
-
-.right{
-    width: 40%;
-
-    & h2{
-        font-size: 5rem;
-        margin-bottom: 25px;
-        text-transform: capitalize;
-        font-weight: 300;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    & ul{
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin-bottom: 20px;
-    }
-    & ul strong{
-        text-transform: uppercase;
-        font-size: .9em;
-        font-weight: 500;
-        margin-bottom: 5px;
-    }
-    & ul li{
-        list-style: none;
-        font-size: 1em;
-        font-weight: lighter;
-        margin-left: 30px;
-        position: relative;
-    }
-    & ul li::after{
-        content: '';
-        width: 6px;
-        height: 6px;
-        position: absolute;
-        top: 9px;
-        border-top-left-radius: 50%;
-        border-bottom-right-radius: 50%;
-        left: -20px;
-        background: linear-gradient(to left, transparent, #ffffff);
-        rotate: -90deg;
-    }
-    & button {
-        padding: 10px 20px;
-        border: 1px solid white;
-        outline: none;
-        font-weight: 500;
-        background: transparent;
-        color: white;
-        transition: 0.5s all ease;
-    }
-    & button:hover {
-        border: 1px solid rgb(0, 0, 0);
-        outline: 2px solid #00000052;
-        background: black;
-        border-radius: 10px;
-        scale:1.1;
-    }
-    
-}
 
 /* four */
 
-.four{
+.four {
     position: relative;
-    height: 100vh;
+    min-height: 100vh; 
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.four h1{
+.four h1 {
     font-size: 20vw;
-    position: absolute;
-    bottom: -15%;
+    position: relative;
+    bottom: -28%;
     text-align: center;
     width: 100%;
     cursor: pointer;
     z-index: 2;
     transition: 0.5s color ease;
 }
-.four h1:before{
+
+.four h1:before {
     content: '';
     position: absolute;
     top: 50%;
     left: 2.5%;
     width: 0;
-    height: 3px;
+    height: 5px;
     border-radius: 20px;
-    background: red;
+    background: rgb(190, 0, 0);
     transition: 0.5s width ease;
+    transition-delay: 0.3s;
 }
 
-.four h1:hover{
-    color: rgb(44, 44, 44);
-}
-.four h1:hover:before{
-    width:95%;
+.four h1:hover {
+    color: rgb(0, 0, 0);
 }
 
-.four p{
+.four h1:hover:before {
+    width: 95%;
+}
+
+.four p {
+    position: relative;
+    top: -20%;
+    left: 0;
     font-size: 2vw;
-    & span{
-        color: red;
-    }
-    
 }
+
+.four p span {
+    color: rgb(0, 0, 0);
+}
+

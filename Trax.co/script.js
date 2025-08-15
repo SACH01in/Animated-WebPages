@@ -67,7 +67,7 @@ function LoaderAnimation(){
     },40);
     
 }
-LoaderAnimation();
+// LoaderAnimation();
 
 
 
@@ -133,4 +133,4 @@ function HeroAnimation(){
         display:"none",
     })
 }
-HeroAnimation();
+// HeroAnimation();
